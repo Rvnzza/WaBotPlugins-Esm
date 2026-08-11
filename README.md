@@ -1,4 +1,4 @@
-# WaBotPlugins-Esm
+# WaBotPlugins
 
 ## 📡 Informasi:
 - Support Msg New, button, dkk

